@@ -16,7 +16,5 @@ Route::group(['namespace' => 'Theme\Main\Http\Controllers', 'middleware' => 'web
             'as'   => 'public.single',
             'uses' => 'MainController@getView',
         ]);
-
     });
-
 });

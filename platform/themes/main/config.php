@@ -35,16 +35,14 @@ return [
         // Before event inherit from package config and the theme that call before,
         // you can use this event to set meta, breadcrumb template or anything
         // you want inheriting.
-        'before' => function($theme)
-        {
+        'before' => function ($theme) {
             // You can remove this line anytime.
         },
 
         // Listen on event before render a theme,
         // this event should call to assign some assets,
         // breadcrumb template.
-        'beforeRenderTheme' => function (Theme $theme)
-        {
+        'beforeRenderTheme' => function (Theme $theme) {
             // Partial composer.
             // $theme->partialComposer('header', function($view) {
             //     $view->with('auth', \Auth::user());
@@ -52,7 +50,9 @@ return [
 
             // You may use this event to set up your assets.
             $theme->asset()->usePath()->add('style', 'css/style.css');
+            $theme->asset()->add('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
             $theme->asset()->container('footer')->usePath()->add('script', 'script.js');
+            $theme->asset()->container('footer')->add('bootstrap_script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function (\Botble\Shortcode\View\View $view) {
@@ -65,8 +65,7 @@ return [
         // this should call to assign style, script for a layout.
         'beforeRenderLayout' => [
 
-            'default' => function ($theme)
-            {
+            'default' => function ($theme) {
                 // $theme->asset()->usePath()->add('ipad', 'css/layouts/ipad.css');
             }
         ]
