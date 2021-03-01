@@ -49,10 +49,21 @@ return [
             // });
 
             // You may use this event to set up your assets.
-            $theme->asset()->usePath()->add('style', 'css/style.css');
-            $theme->asset()->add('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-            $theme->asset()->container('footer')->usePath()->add('script', 'script.js');
-            $theme->asset()->container('footer')->add('bootstrap_script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
+//            $theme->asset()->usePath()->add('style', 'css/style.css');
+            $theme->asset()->add('swiper_css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+            $theme->asset()->add('aos_animation', 'https://unpkg.com/aos@next/dist/aos.css');
+            $theme->asset()->add('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+            $theme->asset()->container('after_header')->add('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
+            $theme->asset()->container('after_header')->usePath()->add('common', 'css/common.css');
+
+            $theme->asset()->container('after_header')->add('uikit_js', 'https://getuikit.com/assets/uikit/dist/js/uikit.js');
+            $theme->asset()->container('after_header')->add('uikit_icon_js', 'https://getuikit.com/assets/uikit/dist/js/uikit-icons.js');
+
+            $theme->asset()->container('footer')->add('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js');
+            $theme->asset()->container('footer')->add('jqueryboostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js');
+            $theme->asset()->container('footer')->add('swiper_js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+            $theme->asset()->container('footer')->add('aos.js', 'https://unpkg.com/aos@next/dist/aos.js');
+            $theme->asset()->container('footer')->usePath()->add('script', 'js/common.js');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['index', 'page', 'post'], function (\Botble\Shortcode\View\View $view) {
