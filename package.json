@@ -28,6 +28,7 @@
     "dependencies": {
         "bootstrap-vue": "^2.13.1",
         "cropper": "^0.7.9",
+        "fullpage.js": "^3.1.0",
         "moment": "^2.25.3",
         "sanitize-html": "^1.23.0",
         "toastr": "^2.1.4",
